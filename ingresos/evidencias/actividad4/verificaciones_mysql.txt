@@ -1,0 +1,28 @@
++------------+----------------+-----------+
+| rol        | permiso        | is_active |
++------------+----------------+-----------+
+| CAPTURISTA | accounts.write |         0 |
++------------+----------------+-----------+
++------------+-----------+
+| rol        | is_active |
++------------+-----------+
+| CAPTURISTA |         1 |
+| CONSULTA   |         0 |
++------------+-----------+
++-------+----------+--------------------+
+| roles | permisos | relaciones_activas |
++-------+----------+--------------------+
+|     4 |       10 |                 26 |
++-------+----------+--------------------+
+
+Después de repetir el intento rechazado de José, CONSULTA sigue con cuatro permisos activos. concepts.write permanece inactivo:
+
++--------------------+-----------+
+| permiso            | is_active |
++--------------------+-----------+
+| accounts.read      |         1 |
+| company.users.read |         1 |
+| concepts.read      |         1 |
+| concepts.write     |         0 |
+| transactions.read  |         1 |
++--------------------+-----------+

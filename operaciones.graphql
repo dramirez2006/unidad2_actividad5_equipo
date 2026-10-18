@@ -1,0 +1,57 @@
+# Selecciona una operación por nombre en GraphiQL y pega su JSON de variables.
+query PuntoDePartida($roleId: ID!) {
+  roles { id code isActive }
+  permissions { id code isActive }
+  rolePermissions(roleId: $roleId) { id permission { code } isActive }
+}
+
+query ExplorarCatalogo($actor: ID!) {
+  cuentas: permissionCatalog(resource: ACCOUNTS, actorCompanyUserId: $actor) { ...DatosPermiso }
+  movimientos: permissionCatalog(resource: TRANSACTIONS, actorCompanyUserId: $actor) { ...DatosPermiso }
+}
+
+query CatalogoCompleto($actor: ID!) {
+  permissionCatalog(actorCompanyUserId: $actor) { ...DatosPermiso }
+}
+
+query CatalogoEnumInvalido($actor: ID!) {
+  permissionCatalog(resource: PAYMENTS, actorCompanyUserId: $actor) { code }
+}
+
+query RevisarConfiguracion($actor: ID!, $input: SetRolePermissionsInput!) {
+  previewRolePermissions(input: $input, actorCompanyUserId: $actor) {
+    role { code }
+    current { ...DatosPermiso }
+    toActivate { ...DatosPermiso }
+    toDeactivate { ...DatosPermiso }
+    unchanged { ...DatosPermiso }
+    finalCount
+  }
+}
+
+mutation AplicarConfiguracion($actor: ID!, $input: SetRolePermissionsInput!) {
+  setRolePermissions(input: $input, actorCompanyUserId: $actor) {
+    role { code }
+    activated { ...DatosPermiso }
+    deactivated { ...DatosPermiso }
+    unchanged { ...DatosPermiso }
+    finalCount
+    changed
+  }
+}
+
+query ContinuidadCuentas($actor: ID!, $company: ID!) {
+  accounts(actorCompanyUserId: $actor, companyId: $company) { id name companyId }
+}
+
+mutation ContinuidadMovimiento($actor: ID!, $input: CreateTransactionInput!) {
+  createTransaction(actorCompanyUserId: $actor, input: $input) {
+    id amount account { id companyId } concept { id companyId } transactionType
+  }
+}
+
+fragment DatosPermiso on Permission {
+  id
+  code
+  name
+}

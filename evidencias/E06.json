@@ -1,0 +1,416 @@
+[
+  {
+    "variante": "rol_inexistente",
+    "preparacion": null,
+    "sql_antes": "3\tADMINISTRADOR\taccounts.read\t1\t1\n4\tADMINISTRADOR\taccounts.write\t1\t1\n1\tADMINISTRADOR\tcompany.users.read\t1\t1\n2\tADMINISTRADOR\tcompany.users.write\t1\t1\n5\tADMINISTRADOR\tconcepts.read\t1\t1\n6\tADMINISTRADOR\tconcepts.write\t1\t1\n9\tADMINISTRADOR\troles.read\t1\t1\n10\tADMINISTRADOR\troles.write\t1\t1\n7\tADMINISTRADOR\ttransactions.read\t1\t1\n8\tADMINISTRADOR\ttransactions.write\t1\t1\n19\tCAPTURISTA\taccounts.read\t1\t1\n27\tCAPTURISTA\taccounts.write\t1\t1\n20\tCAPTURISTA\tconcepts.read\t1\t1\n21\tCAPTURISTA\ttransactions.read\t1\t1\n22\tCAPTURISTA\ttransactions.write\t1\t1\n24\tCONSULTA\taccounts.read\t1\t1\n23\tCONSULTA\tcompany.users.read\t1\t1\n25\tCONSULTA\tconcepts.read\t1\t1\n28\tCONSULTA\tconcepts.write\t0\t1\n26\tCONSULTA\ttransactions.read\t1\t1\n12\tCONTADOR\taccounts.read\t1\t1\n13\tCONTADOR\taccounts.write\t1\t1\n11\tCONTADOR\tcompany.users.read\t1\t1\n14\tCONTADOR\tconcepts.read\t1\t1\n15\tCONTADOR\tconcepts.write\t1\t1\n18\tCONTADOR\troles.read\t1\t1\n16\tCONTADOR\ttransactions.read\t1\t1\n17\tCONTADOR\ttransactions.write\t1\t1",
+    "preview": {
+      "operacion": "RevisarConfiguracion",
+      "variables": {
+        "actor": "1",
+        "input": {
+          "roleId": "999999",
+          "permissionIds": [
+            "3"
+          ]
+        }
+      },
+      "respuesta": {
+        "data": {
+          "previewRolePermissions": null
+        },
+        "errors": [
+          {
+            "message": "El rol no existe o está inactivo.",
+            "locations": [
+              {
+                "line": 2,
+                "column": 3
+              }
+            ],
+            "path": [
+              "previewRolePermissions"
+            ]
+          }
+        ]
+      }
+    },
+    "aplicacion": {
+      "operacion": "AplicarConfiguracion",
+      "variables": {
+        "actor": "1",
+        "input": {
+          "roleId": "999999",
+          "permissionIds": [
+            "3"
+          ]
+        }
+      },
+      "respuesta": {
+        "data": {
+          "setRolePermissions": null
+        },
+        "errors": [
+          {
+            "message": "El rol no existe o está inactivo.",
+            "locations": [
+              {
+                "line": 2,
+                "column": 3
+              }
+            ],
+            "path": [
+              "setRolePermissions"
+            ]
+          }
+        ]
+      }
+    },
+    "sql_despues": "3\tADMINISTRADOR\taccounts.read\t1\t1\n4\tADMINISTRADOR\taccounts.write\t1\t1\n1\tADMINISTRADOR\tcompany.users.read\t1\t1\n2\tADMINISTRADOR\tcompany.users.write\t1\t1\n5\tADMINISTRADOR\tconcepts.read\t1\t1\n6\tADMINISTRADOR\tconcepts.write\t1\t1\n9\tADMINISTRADOR\troles.read\t1\t1\n10\tADMINISTRADOR\troles.write\t1\t1\n7\tADMINISTRADOR\ttransactions.read\t1\t1\n8\tADMINISTRADOR\ttransactions.write\t1\t1\n19\tCAPTURISTA\taccounts.read\t1\t1\n27\tCAPTURISTA\taccounts.write\t1\t1\n20\tCAPTURISTA\tconcepts.read\t1\t1\n21\tCAPTURISTA\ttransactions.read\t1\t1\n22\tCAPTURISTA\ttransactions.write\t1\t1\n24\tCONSULTA\taccounts.read\t1\t1\n23\tCONSULTA\tcompany.users.read\t1\t1\n25\tCONSULTA\tconcepts.read\t1\t1\n28\tCONSULTA\tconcepts.write\t0\t1\n26\tCONSULTA\ttransactions.read\t1\t1\n12\tCONTADOR\taccounts.read\t1\t1\n13\tCONTADOR\taccounts.write\t1\t1\n11\tCONTADOR\tcompany.users.read\t1\t1\n14\tCONTADOR\tconcepts.read\t1\t1\n15\tCONTADOR\tconcepts.write\t1\t1\n18\tCONTADOR\troles.read\t1\t1\n16\tCONTADOR\ttransactions.read\t1\t1\n17\tCONTADOR\ttransactions.write\t1\t1"
+  },
+  {
+    "variante": "rol_inactivo",
+    "preparacion": "UPDATE roles SET is_active=0 WHERE id=4",
+    "sql_antes": "3\tADMINISTRADOR\taccounts.read\t1\t1\n4\tADMINISTRADOR\taccounts.write\t1\t1\n1\tADMINISTRADOR\tcompany.users.read\t1\t1\n2\tADMINISTRADOR\tcompany.users.write\t1\t1\n5\tADMINISTRADOR\tconcepts.read\t1\t1\n6\tADMINISTRADOR\tconcepts.write\t1\t1\n9\tADMINISTRADOR\troles.read\t1\t1\n10\tADMINISTRADOR\troles.write\t1\t1\n7\tADMINISTRADOR\ttransactions.read\t1\t1\n8\tADMINISTRADOR\ttransactions.write\t1\t1\n19\tCAPTURISTA\taccounts.read\t1\t1\n27\tCAPTURISTA\taccounts.write\t1\t1\n20\tCAPTURISTA\tconcepts.read\t1\t1\n21\tCAPTURISTA\ttransactions.read\t1\t1\n22\tCAPTURISTA\ttransactions.write\t1\t1\n24\tCONSULTA\taccounts.read\t1\t1\n23\tCONSULTA\tcompany.users.read\t1\t1\n25\tCONSULTA\tconcepts.read\t1\t1\n28\tCONSULTA\tconcepts.write\t0\t1\n26\tCONSULTA\ttransactions.read\t1\t1\n12\tCONTADOR\taccounts.read\t1\t1\n13\tCONTADOR\taccounts.write\t1\t1\n11\tCONTADOR\tcompany.users.read\t1\t1\n14\tCONTADOR\tconcepts.read\t1\t1\n15\tCONTADOR\tconcepts.write\t1\t1\n18\tCONTADOR\troles.read\t1\t1\n16\tCONTADOR\ttransactions.read\t1\t1\n17\tCONTADOR\ttransactions.write\t1\t1",
+    "preview": {
+      "operacion": "RevisarConfiguracion",
+      "variables": {
+        "actor": "1",
+        "input": {
+          "roleId": "4",
+          "permissionIds": [
+            "3"
+          ]
+        }
+      },
+      "respuesta": {
+        "data": {
+          "previewRolePermissions": null
+        },
+        "errors": [
+          {
+            "message": "El rol no existe o está inactivo.",
+            "locations": [
+              {
+                "line": 2,
+                "column": 3
+              }
+            ],
+            "path": [
+              "previewRolePermissions"
+            ]
+          }
+        ]
+      }
+    },
+    "aplicacion": {
+      "operacion": "AplicarConfiguracion",
+      "variables": {
+        "actor": "1",
+        "input": {
+          "roleId": "4",
+          "permissionIds": [
+            "3"
+          ]
+        }
+      },
+      "respuesta": {
+        "data": {
+          "setRolePermissions": null
+        },
+        "errors": [
+          {
+            "message": "El rol no existe o está inactivo.",
+            "locations": [
+              {
+                "line": 2,
+                "column": 3
+              }
+            ],
+            "path": [
+              "setRolePermissions"
+            ]
+          }
+        ]
+      }
+    },
+    "sql_despues": "3\tADMINISTRADOR\taccounts.read\t1\t1\n4\tADMINISTRADOR\taccounts.write\t1\t1\n1\tADMINISTRADOR\tcompany.users.read\t1\t1\n2\tADMINISTRADOR\tcompany.users.write\t1\t1\n5\tADMINISTRADOR\tconcepts.read\t1\t1\n6\tADMINISTRADOR\tconcepts.write\t1\t1\n9\tADMINISTRADOR\troles.read\t1\t1\n10\tADMINISTRADOR\troles.write\t1\t1\n7\tADMINISTRADOR\ttransactions.read\t1\t1\n8\tADMINISTRADOR\ttransactions.write\t1\t1\n19\tCAPTURISTA\taccounts.read\t1\t1\n27\tCAPTURISTA\taccounts.write\t1\t1\n20\tCAPTURISTA\tconcepts.read\t1\t1\n21\tCAPTURISTA\ttransactions.read\t1\t1\n22\tCAPTURISTA\ttransactions.write\t1\t1\n24\tCONSULTA\taccounts.read\t1\t1\n23\tCONSULTA\tcompany.users.read\t1\t1\n25\tCONSULTA\tconcepts.read\t1\t1\n28\tCONSULTA\tconcepts.write\t0\t1\n26\tCONSULTA\ttransactions.read\t1\t1\n12\tCONTADOR\taccounts.read\t1\t1\n13\tCONTADOR\taccounts.write\t1\t1\n11\tCONTADOR\tcompany.users.read\t1\t1\n14\tCONTADOR\tconcepts.read\t1\t1\n15\tCONTADOR\tconcepts.write\t1\t1\n18\tCONTADOR\troles.read\t1\t1\n16\tCONTADOR\ttransactions.read\t1\t1\n17\tCONTADOR\ttransactions.write\t1\t1"
+  },
+  {
+    "variante": "administrador",
+    "preparacion": null,
+    "sql_antes": "3\tADMINISTRADOR\taccounts.read\t1\t1\n4\tADMINISTRADOR\taccounts.write\t1\t1\n1\tADMINISTRADOR\tcompany.users.read\t1\t1\n2\tADMINISTRADOR\tcompany.users.write\t1\t1\n5\tADMINISTRADOR\tconcepts.read\t1\t1\n6\tADMINISTRADOR\tconcepts.write\t1\t1\n9\tADMINISTRADOR\troles.read\t1\t1\n10\tADMINISTRADOR\troles.write\t1\t1\n7\tADMINISTRADOR\ttransactions.read\t1\t1\n8\tADMINISTRADOR\ttransactions.write\t1\t1\n19\tCAPTURISTA\taccounts.read\t1\t1\n27\tCAPTURISTA\taccounts.write\t1\t1\n20\tCAPTURISTA\tconcepts.read\t1\t1\n21\tCAPTURISTA\ttransactions.read\t1\t1\n22\tCAPTURISTA\ttransactions.write\t1\t1\n24\tCONSULTA\taccounts.read\t1\t1\n23\tCONSULTA\tcompany.users.read\t1\t1\n25\tCONSULTA\tconcepts.read\t1\t1\n28\tCONSULTA\tconcepts.write\t0\t1\n26\tCONSULTA\ttransactions.read\t1\t1\n12\tCONTADOR\taccounts.read\t1\t1\n13\tCONTADOR\taccounts.write\t1\t1\n11\tCONTADOR\tcompany.users.read\t1\t1\n14\tCONTADOR\tconcepts.read\t1\t1\n15\tCONTADOR\tconcepts.write\t1\t1\n18\tCONTADOR\troles.read\t1\t1\n16\tCONTADOR\ttransactions.read\t1\t1\n17\tCONTADOR\ttransactions.write\t1\t1",
+    "preview": {
+      "operacion": "RevisarConfiguracion",
+      "variables": {
+        "actor": "1",
+        "input": {
+          "roleId": "1",
+          "permissionIds": [
+            "3"
+          ]
+        }
+      },
+      "respuesta": {
+        "data": {
+          "previewRolePermissions": null
+        },
+        "errors": [
+          {
+            "message": "No se puede cambiar la lista de ADMINISTRADOR en esta práctica.",
+            "locations": [
+              {
+                "line": 2,
+                "column": 3
+              }
+            ],
+            "path": [
+              "previewRolePermissions"
+            ]
+          }
+        ]
+      }
+    },
+    "aplicacion": {
+      "operacion": "AplicarConfiguracion",
+      "variables": {
+        "actor": "1",
+        "input": {
+          "roleId": "1",
+          "permissionIds": [
+            "3"
+          ]
+        }
+      },
+      "respuesta": {
+        "data": {
+          "setRolePermissions": null
+        },
+        "errors": [
+          {
+            "message": "No se puede cambiar la lista de ADMINISTRADOR en esta práctica.",
+            "locations": [
+              {
+                "line": 2,
+                "column": 3
+              }
+            ],
+            "path": [
+              "setRolePermissions"
+            ]
+          }
+        ]
+      }
+    },
+    "sql_despues": "3\tADMINISTRADOR\taccounts.read\t1\t1\n4\tADMINISTRADOR\taccounts.write\t1\t1\n1\tADMINISTRADOR\tcompany.users.read\t1\t1\n2\tADMINISTRADOR\tcompany.users.write\t1\t1\n5\tADMINISTRADOR\tconcepts.read\t1\t1\n6\tADMINISTRADOR\tconcepts.write\t1\t1\n9\tADMINISTRADOR\troles.read\t1\t1\n10\tADMINISTRADOR\troles.write\t1\t1\n7\tADMINISTRADOR\ttransactions.read\t1\t1\n8\tADMINISTRADOR\ttransactions.write\t1\t1\n19\tCAPTURISTA\taccounts.read\t1\t1\n27\tCAPTURISTA\taccounts.write\t1\t1\n20\tCAPTURISTA\tconcepts.read\t1\t1\n21\tCAPTURISTA\ttransactions.read\t1\t1\n22\tCAPTURISTA\ttransactions.write\t1\t1\n24\tCONSULTA\taccounts.read\t1\t1\n23\tCONSULTA\tcompany.users.read\t1\t1\n25\tCONSULTA\tconcepts.read\t1\t1\n28\tCONSULTA\tconcepts.write\t0\t1\n26\tCONSULTA\ttransactions.read\t1\t1\n12\tCONTADOR\taccounts.read\t1\t1\n13\tCONTADOR\taccounts.write\t1\t1\n11\tCONTADOR\tcompany.users.read\t1\t1\n14\tCONTADOR\tconcepts.read\t1\t1\n15\tCONTADOR\tconcepts.write\t1\t1\n18\tCONTADOR\troles.read\t1\t1\n16\tCONTADOR\ttransactions.read\t1\t1\n17\tCONTADOR\ttransactions.write\t1\t1"
+  },
+  {
+    "variante": "permiso_inexistente",
+    "preparacion": null,
+    "sql_antes": "3\tADMINISTRADOR\taccounts.read\t1\t1\n4\tADMINISTRADOR\taccounts.write\t1\t1\n1\tADMINISTRADOR\tcompany.users.read\t1\t1\n2\tADMINISTRADOR\tcompany.users.write\t1\t1\n5\tADMINISTRADOR\tconcepts.read\t1\t1\n6\tADMINISTRADOR\tconcepts.write\t1\t1\n9\tADMINISTRADOR\troles.read\t1\t1\n10\tADMINISTRADOR\troles.write\t1\t1\n7\tADMINISTRADOR\ttransactions.read\t1\t1\n8\tADMINISTRADOR\ttransactions.write\t1\t1\n19\tCAPTURISTA\taccounts.read\t1\t1\n27\tCAPTURISTA\taccounts.write\t1\t1\n20\tCAPTURISTA\tconcepts.read\t1\t1\n21\tCAPTURISTA\ttransactions.read\t1\t1\n22\tCAPTURISTA\ttransactions.write\t1\t1\n24\tCONSULTA\taccounts.read\t1\t1\n23\tCONSULTA\tcompany.users.read\t1\t1\n25\tCONSULTA\tconcepts.read\t1\t1\n28\tCONSULTA\tconcepts.write\t0\t1\n26\tCONSULTA\ttransactions.read\t1\t1\n12\tCONTADOR\taccounts.read\t1\t1\n13\tCONTADOR\taccounts.write\t1\t1\n11\tCONTADOR\tcompany.users.read\t1\t1\n14\tCONTADOR\tconcepts.read\t1\t1\n15\tCONTADOR\tconcepts.write\t1\t1\n18\tCONTADOR\troles.read\t1\t1\n16\tCONTADOR\ttransactions.read\t1\t1\n17\tCONTADOR\ttransactions.write\t1\t1",
+    "preview": {
+      "operacion": "RevisarConfiguracion",
+      "variables": {
+        "actor": "1",
+        "input": {
+          "roleId": "3",
+          "permissionIds": [
+            "3",
+            "999999"
+          ]
+        }
+      },
+      "respuesta": {
+        "data": {
+          "previewRolePermissions": null
+        },
+        "errors": [
+          {
+            "message": "El permiso 999999 no existe o está inactivo.",
+            "locations": [
+              {
+                "line": 2,
+                "column": 3
+              }
+            ],
+            "path": [
+              "previewRolePermissions"
+            ]
+          }
+        ]
+      }
+    },
+    "aplicacion": {
+      "operacion": "AplicarConfiguracion",
+      "variables": {
+        "actor": "1",
+        "input": {
+          "roleId": "3",
+          "permissionIds": [
+            "3",
+            "999999"
+          ]
+        }
+      },
+      "respuesta": {
+        "data": {
+          "setRolePermissions": null
+        },
+        "errors": [
+          {
+            "message": "El permiso 999999 no existe o está inactivo.",
+            "locations": [
+              {
+                "line": 2,
+                "column": 3
+              }
+            ],
+            "path": [
+              "setRolePermissions"
+            ]
+          }
+        ]
+      }
+    },
+    "sql_despues": "3\tADMINISTRADOR\taccounts.read\t1\t1\n4\tADMINISTRADOR\taccounts.write\t1\t1\n1\tADMINISTRADOR\tcompany.users.read\t1\t1\n2\tADMINISTRADOR\tcompany.users.write\t1\t1\n5\tADMINISTRADOR\tconcepts.read\t1\t1\n6\tADMINISTRADOR\tconcepts.write\t1\t1\n9\tADMINISTRADOR\troles.read\t1\t1\n10\tADMINISTRADOR\troles.write\t1\t1\n7\tADMINISTRADOR\ttransactions.read\t1\t1\n8\tADMINISTRADOR\ttransactions.write\t1\t1\n19\tCAPTURISTA\taccounts.read\t1\t1\n27\tCAPTURISTA\taccounts.write\t1\t1\n20\tCAPTURISTA\tconcepts.read\t1\t1\n21\tCAPTURISTA\ttransactions.read\t1\t1\n22\tCAPTURISTA\ttransactions.write\t1\t1\n24\tCONSULTA\taccounts.read\t1\t1\n23\tCONSULTA\tcompany.users.read\t1\t1\n25\tCONSULTA\tconcepts.read\t1\t1\n28\tCONSULTA\tconcepts.write\t0\t1\n26\tCONSULTA\ttransactions.read\t1\t1\n12\tCONTADOR\taccounts.read\t1\t1\n13\tCONTADOR\taccounts.write\t1\t1\n11\tCONTADOR\tcompany.users.read\t1\t1\n14\tCONTADOR\tconcepts.read\t1\t1\n15\tCONTADOR\tconcepts.write\t1\t1\n18\tCONTADOR\troles.read\t1\t1\n16\tCONTADOR\ttransactions.read\t1\t1\n17\tCONTADOR\ttransactions.write\t1\t1"
+  },
+  {
+    "variante": "permiso_inactivo",
+    "preparacion": "UPDATE permissions SET is_active=0 WHERE id=6",
+    "sql_antes": "3\tADMINISTRADOR\taccounts.read\t1\t1\n4\tADMINISTRADOR\taccounts.write\t1\t1\n1\tADMINISTRADOR\tcompany.users.read\t1\t1\n2\tADMINISTRADOR\tcompany.users.write\t1\t1\n5\tADMINISTRADOR\tconcepts.read\t1\t1\n6\tADMINISTRADOR\tconcepts.write\t1\t0\n9\tADMINISTRADOR\troles.read\t1\t1\n10\tADMINISTRADOR\troles.write\t1\t1\n7\tADMINISTRADOR\ttransactions.read\t1\t1\n8\tADMINISTRADOR\ttransactions.write\t1\t1\n19\tCAPTURISTA\taccounts.read\t1\t1\n27\tCAPTURISTA\taccounts.write\t1\t1\n20\tCAPTURISTA\tconcepts.read\t1\t1\n21\tCAPTURISTA\ttransactions.read\t1\t1\n22\tCAPTURISTA\ttransactions.write\t1\t1\n24\tCONSULTA\taccounts.read\t1\t1\n23\tCONSULTA\tcompany.users.read\t1\t1\n25\tCONSULTA\tconcepts.read\t1\t1\n28\tCONSULTA\tconcepts.write\t0\t0\n26\tCONSULTA\ttransactions.read\t1\t1\n12\tCONTADOR\taccounts.read\t1\t1\n13\tCONTADOR\taccounts.write\t1\t1\n11\tCONTADOR\tcompany.users.read\t1\t1\n14\tCONTADOR\tconcepts.read\t1\t1\n15\tCONTADOR\tconcepts.write\t1\t0\n18\tCONTADOR\troles.read\t1\t1\n16\tCONTADOR\ttransactions.read\t1\t1\n17\tCONTADOR\ttransactions.write\t1\t1",
+    "preview": {
+      "operacion": "RevisarConfiguracion",
+      "variables": {
+        "actor": "1",
+        "input": {
+          "roleId": "3",
+          "permissionIds": [
+            "3",
+            "6"
+          ]
+        }
+      },
+      "respuesta": {
+        "data": {
+          "previewRolePermissions": null
+        },
+        "errors": [
+          {
+            "message": "El permiso 6 no existe o está inactivo.",
+            "locations": [
+              {
+                "line": 2,
+                "column": 3
+              }
+            ],
+            "path": [
+              "previewRolePermissions"
+            ]
+          }
+        ]
+      }
+    },
+    "aplicacion": {
+      "operacion": "AplicarConfiguracion",
+      "variables": {
+        "actor": "1",
+        "input": {
+          "roleId": "3",
+          "permissionIds": [
+            "3",
+            "6"
+          ]
+        }
+      },
+      "respuesta": {
+        "data": {
+          "setRolePermissions": null
+        },
+        "errors": [
+          {
+            "message": "El permiso 6 no existe o está inactivo.",
+            "locations": [
+              {
+                "line": 2,
+                "column": 3
+              }
+            ],
+            "path": [
+              "setRolePermissions"
+            ]
+          }
+        ]
+      }
+    },
+    "sql_despues": "3\tADMINISTRADOR\taccounts.read\t1\t1\n4\tADMINISTRADOR\taccounts.write\t1\t1\n1\tADMINISTRADOR\tcompany.users.read\t1\t1\n2\tADMINISTRADOR\tcompany.users.write\t1\t1\n5\tADMINISTRADOR\tconcepts.read\t1\t1\n6\tADMINISTRADOR\tconcepts.write\t1\t0\n9\tADMINISTRADOR\troles.read\t1\t1\n10\tADMINISTRADOR\troles.write\t1\t1\n7\tADMINISTRADOR\ttransactions.read\t1\t1\n8\tADMINISTRADOR\ttransactions.write\t1\t1\n19\tCAPTURISTA\taccounts.read\t1\t1\n27\tCAPTURISTA\taccounts.write\t1\t1\n20\tCAPTURISTA\tconcepts.read\t1\t1\n21\tCAPTURISTA\ttransactions.read\t1\t1\n22\tCAPTURISTA\ttransactions.write\t1\t1\n24\tCONSULTA\taccounts.read\t1\t1\n23\tCONSULTA\tcompany.users.read\t1\t1\n25\tCONSULTA\tconcepts.read\t1\t1\n28\tCONSULTA\tconcepts.write\t0\t0\n26\tCONSULTA\ttransactions.read\t1\t1\n12\tCONTADOR\taccounts.read\t1\t1\n13\tCONTADOR\taccounts.write\t1\t1\n11\tCONTADOR\tcompany.users.read\t1\t1\n14\tCONTADOR\tconcepts.read\t1\t1\n15\tCONTADOR\tconcepts.write\t1\t0\n18\tCONTADOR\troles.read\t1\t1\n16\tCONTADOR\ttransactions.read\t1\t1\n17\tCONTADOR\ttransactions.write\t1\t1"
+  },
+  {
+    "variante": "permiso_repetido",
+    "preparacion": null,
+    "sql_antes": "3\tADMINISTRADOR\taccounts.read\t1\t1\n4\tADMINISTRADOR\taccounts.write\t1\t1\n1\tADMINISTRADOR\tcompany.users.read\t1\t1\n2\tADMINISTRADOR\tcompany.users.write\t1\t1\n5\tADMINISTRADOR\tconcepts.read\t1\t1\n6\tADMINISTRADOR\tconcepts.write\t1\t1\n9\tADMINISTRADOR\troles.read\t1\t1\n10\tADMINISTRADOR\troles.write\t1\t1\n7\tADMINISTRADOR\ttransactions.read\t1\t1\n8\tADMINISTRADOR\ttransactions.write\t1\t1\n19\tCAPTURISTA\taccounts.read\t1\t1\n27\tCAPTURISTA\taccounts.write\t1\t1\n20\tCAPTURISTA\tconcepts.read\t1\t1\n21\tCAPTURISTA\ttransactions.read\t1\t1\n22\tCAPTURISTA\ttransactions.write\t1\t1\n24\tCONSULTA\taccounts.read\t1\t1\n23\tCONSULTA\tcompany.users.read\t1\t1\n25\tCONSULTA\tconcepts.read\t1\t1\n28\tCONSULTA\tconcepts.write\t0\t1\n26\tCONSULTA\ttransactions.read\t1\t1\n12\tCONTADOR\taccounts.read\t1\t1\n13\tCONTADOR\taccounts.write\t1\t1\n11\tCONTADOR\tcompany.users.read\t1\t1\n14\tCONTADOR\tconcepts.read\t1\t1\n15\tCONTADOR\tconcepts.write\t1\t1\n18\tCONTADOR\troles.read\t1\t1\n16\tCONTADOR\ttransactions.read\t1\t1\n17\tCONTADOR\ttransactions.write\t1\t1",
+    "preview": {
+      "operacion": "RevisarConfiguracion",
+      "variables": {
+        "actor": "1",
+        "input": {
+          "roleId": "3",
+          "permissionIds": [
+            "3",
+            "3"
+          ]
+        }
+      },
+      "respuesta": {
+        "data": {
+          "previewRolePermissions": null
+        },
+        "errors": [
+          {
+            "message": "El ID de permiso 3 está repetido.",
+            "locations": [
+              {
+                "line": 2,
+                "column": 3
+              }
+            ],
+            "path": [
+              "previewRolePermissions"
+            ]
+          }
+        ]
+      }
+    },
+    "aplicacion": {
+      "operacion": "AplicarConfiguracion",
+      "variables": {
+        "actor": "1",
+        "input": {
+          "roleId": "3",
+          "permissionIds": [
+            "3",
+            "3"
+          ]
+        }
+      },
+      "respuesta": {
+        "data": {
+          "setRolePermissions": null
+        },
+        "errors": [
+          {
+            "message": "El ID de permiso 3 está repetido.",
+            "locations": [
+              {
+                "line": 2,
+                "column": 3
+              }
+            ],
+            "path": [
+              "setRolePermissions"
+            ]
+          }
+        ]
+      }
+    },
+    "sql_despues": "3\tADMINISTRADOR\taccounts.read\t1\t1\n4\tADMINISTRADOR\taccounts.write\t1\t1\n1\tADMINISTRADOR\tcompany.users.read\t1\t1\n2\tADMINISTRADOR\tcompany.users.write\t1\t1\n5\tADMINISTRADOR\tconcepts.read\t1\t1\n6\tADMINISTRADOR\tconcepts.write\t1\t1\n9\tADMINISTRADOR\troles.read\t1\t1\n10\tADMINISTRADOR\troles.write\t1\t1\n7\tADMINISTRADOR\ttransactions.read\t1\t1\n8\tADMINISTRADOR\ttransactions.write\t1\t1\n19\tCAPTURISTA\taccounts.read\t1\t1\n27\tCAPTURISTA\taccounts.write\t1\t1\n20\tCAPTURISTA\tconcepts.read\t1\t1\n21\tCAPTURISTA\ttransactions.read\t1\t1\n22\tCAPTURISTA\ttransactions.write\t1\t1\n24\tCONSULTA\taccounts.read\t1\t1\n23\tCONSULTA\tcompany.users.read\t1\t1\n25\tCONSULTA\tconcepts.read\t1\t1\n28\tCONSULTA\tconcepts.write\t0\t1\n26\tCONSULTA\ttransactions.read\t1\t1\n12\tCONTADOR\taccounts.read\t1\t1\n13\tCONTADOR\taccounts.write\t1\t1\n11\tCONTADOR\tcompany.users.read\t1\t1\n14\tCONTADOR\tconcepts.read\t1\t1\n15\tCONTADOR\tconcepts.write\t1\t1\n18\tCONTADOR\troles.read\t1\t1\n16\tCONTADOR\ttransactions.read\t1\t1\n17\tCONTADOR\ttransactions.write\t1\t1"
+  }
+]

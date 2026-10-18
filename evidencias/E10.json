@@ -1,0 +1,67 @@
+{
+  "cuentas": {
+    "operacion": "ContinuidadCuentas",
+    "variables": {
+      "actor": "1",
+      "company": "1"
+    },
+    "respuesta": {
+      "data": {
+        "accounts": [
+          {
+            "id": "1",
+            "name": "Maria despues",
+            "companyId": "1"
+          },
+          {
+            "id": "2",
+            "name": "Jose despues",
+            "companyId": "1"
+          },
+          {
+            "id": "3",
+            "name": "Caja movimientos",
+            "companyId": "1"
+          },
+          {
+            "id": "4",
+            "name": "Luis contador",
+            "companyId": "1"
+          }
+        ]
+      }
+    }
+  },
+  "movimiento": {
+    "operacion": "ContinuidadMovimiento",
+    "variables": {
+      "actor": "1",
+      "input": {
+        "accountId": "3",
+        "conceptId": "1",
+        "transactionType": "INCOME",
+        "amount": "15.50",
+        "shortDescription": "Prueba actividad 5"
+      }
+    },
+    "respuesta": {
+      "data": {
+        "createTransaction": {
+          "id": "5",
+          "amount": "15.50",
+          "account": {
+            "id": "3",
+            "companyId": "1"
+          },
+          "concept": {
+            "id": "1",
+            "companyId": "1"
+          },
+          "transactionType": "INCOME"
+        }
+      }
+    }
+  },
+  "sql_movimiento": "5\t15.50\t1\t3\t1",
+  "nota": "Token de prueba generado en memoria con el mecanismo existente; no se guardó."
+}

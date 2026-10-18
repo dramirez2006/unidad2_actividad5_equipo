@@ -1,0 +1,41 @@
+test_e07_rollback_desde_sesion_nueva (tests.test_e07_mysql.RollbackMySQLTest.test_e07_rollback_desde_sesion_nueva) ... Fallo controlado después de flush y antes de commit
+
+GraphQL request:2:13
+1 | mutation E07($actor: ID!, $input: SetRolePermissionsInput!) {
+2 |             setRolePermissions(actorCompanyUserId: $actor, input: $input) { changed }
+  |             ^
+3 |         }
+Traceback (most recent call last):
+  File "/Users/diegoramirezmagana/Downloads/Tareas_backend_actividad4/U2_Actividad3/.venv/lib/python3.12/site-packages/graphql/execution/executor.py", line 967, in execute_field
+    result = resolve_fn(source, info, **args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/diegoramirezmagana/Downloads/Tareas_backend_actividad4/U2_Actividad3/.venv/lib/python3.12/site-packages/strawberry/schema/schema_converter.py", line 1201, in _resolver
+    return _get_result_with_extensions(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/diegoramirezmagana/Downloads/Tareas_backend_actividad4/U2_Actividad3/.venv/lib/python3.12/site-packages/strawberry/schema/schema_converter.py", line 1187, in extension_resolver
+    return reduce(
+           ^^^^^^^
+  File "/Users/diegoramirezmagana/Downloads/Tareas_backend_actividad4/U2_Actividad3/.venv/lib/python3.12/site-packages/strawberry/schema/schema_converter.py", line 1179, in wrapped_get_result
+    return _get_result(
+           ^^^^^^^^^^^^
+  File "/Users/diegoramirezmagana/Downloads/Tareas_backend_actividad4/U2_Actividad3/.venv/lib/python3.12/site-packages/strawberry/schema/schema_converter.py", line 1065, in _get_result
+    return field.get_result(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/diegoramirezmagana/Downloads/Tareas_backend_actividad4/U2_Actividad3/.venv/lib/python3.12/site-packages/strawberry/types/field.py", line 241, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/diegoramirezmagana/Downloads/Tareas_backend_actividad4/U2_Actividad3/.venv/lib/python3.12/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/diegoramirezmagana/Downloads/Tareas_backend_actividad4/U2_Actividad3/app/schema.py", line 915, in set_role_permissions
+    db.flush()
+  File "/Users/diegoramirezmagana/Downloads/Tareas_backend_actividad4/U2_Actividad3/tests/test_e07_mysql.py", line 42, in fail_after_flush
+    raise RuntimeError("Fallo controlado después de flush y antes de commit")
+RuntimeError: Fallo controlado después de flush y antes de commit
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.041s
+
+OK
+E07 MySQL: error tras flush; antes=[(19, 3, True), (20, 5, True), (21, 7, True), (22, 8, True), (27, 4, False)]; sesion_nueva=[(19, 3, True), (20, 5, True), (21, 7, True), (22, 8, True), (27, 4, False)]

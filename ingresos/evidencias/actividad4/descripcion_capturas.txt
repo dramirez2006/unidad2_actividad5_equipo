@@ -1,0 +1,35 @@
+Actividad 4 - Configuración de permisos para diferentes roles
+
+Configuración inicial
+capturas_graphql/01_roles.png: El sistema muestra los cuatro roles de la actividad.
+capturas_graphql/02_permisos.png: El catálogo muestra los diez permisos.
+capturas_graphql/03_matriz_inicial.png: CAPTURISTA puede registrar movimientos y todavía no puede crear cuentas.
+capturas_graphql/03_contador_inicial.png: CONTADOR tiene accounts.write y no tiene roles.write.
+capturas_graphql/03_consulta_inicial.png: CONSULTA tiene solo permisos de lectura.
+
+Cambio de permisos del capturista
+capturas_graphql/maria_antes.png: La cuenta de María se rechaza porque CAPTURISTA no tiene accounts.write.
+capturas_graphql/jose_antes.png: La cuenta de José se rechaza por la misma regla.
+capturas_graphql/08_ana_agrega_permiso.png: Ana agrega accounts.write al rol CAPTURISTA.
+capturas_graphql/maria_despues.png: María puede crear una cuenta después del cambio en el rol.
+capturas_graphql/jose_despues.png: José también puede crear una cuenta sin cambiar su rol.
+capturas_graphql/10_ana_quita_permiso.png: Ana retira accounts.write del rol CAPTURISTA.
+capturas_graphql/maria_retiro.png: El siguiente intento de María vuelve a rechazarse.
+capturas_graphql/jose_retiro.png: El siguiente intento de José también se rechaza.
+08_permiso_inactivo_mysql.png: La pareja CAPTURISTA/accounts.write sigue guardada en MySQL con is_active igual a 0.
+
+Cambio de rol de Pedro
+capturas_graphql/15_pedro_consulta_rechazado.png: Pedro no puede registrar un movimiento mientras tiene el rol CONSULTA.
+capturas_graphql/16_pedro_cambia_rol.png: Ana asigna a Pedro el rol CAPTURISTA.
+capturas_graphql/17_pedro_capturista_aceptado.png: Pedro registra un movimiento con su nuevo rol.
+capturas_graphql/18_contador_despues.png: La lista de permisos del CONTADOR sigue igual.
+capturas_graphql/18_consulta_despues.png: La lista de CONSULTA conserva solo permisos de lectura.
+capturas_graphql/luis_contador.png: Luis sigue pudiendo crear cuentas como CONTADOR.
+
+Quién puede cambiar la lista
+capturas_graphql/20_jose_permiso_rechazado.png: José no puede cambiar la lista de CONSULTA porque le falta roles.write.
+capturas_graphql/21_ana_permiso_aceptado.png: Ana sí puede agregar concepts.write a CONSULTA.
+capturas_graphql/22_ana_restaura_consulta.png: Ana retira concepts.write y CONSULTA vuelve a quedar sin permisos de escritura.
+
+verificaciones_mysql.txt registra el rol activo de Pedro, el intento rechazado de José y el reinicio sin duplicados.
+select_final_mysql.txt contiene la consulta SQL y el resultado final de role_permissions.
